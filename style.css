@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700,900&display=swap');
+*{
+	margin:0;
+	padding:0;
+	box-sizing:border-box;
+	font-family: 'Montserrat'
+
+}
+
+
+body{
+	background-size: cover;
+	background-position: center;
+
+	background:url('background.jpg');
+	height: 100vh;
+	width:100%;
+}
+.form{
+	position: absolute;
+	top:50%;
+	left:50%;
+	transform: translate(-50%,-50%);
+	background:#24252A;
+	width:50%;
+	height:50%;
+	text-align:center;
+}
+
+
+.weatherPage{
+	position: fixed;
+	width:100%;
+	height:100vh;
+	top:100%;
+	background:#24252A;
+	transition: 0.8s;
+	background-repeat: none;
+	background-position: center;
+} 
+
+.container{
+	width:90%;
+	margin:0 auto;
+
+	height:100px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.name{
+	display: inline-flex;
+}
+
+
+.midCont{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.img{
+	width:35%;
+}
+.setImg{
+	width:100%;
+}
+.temp{
+	text-align: center;
+	width: 50%;
+	font-size:60px;
+}
+.bottom{
+	top:0%;
+	transition: .8s;
+	color:#fff;
+}
+
+.top{
+	top:-50%;
+	transition: .8s;
+}
+.form h1{
+	margin-top: 50px;
+	margin-bottom: 20px;
+	color:#fff;
+}
+.text{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin:0 auto;
+	width:230px;
+	text-align: right;
+	background-color: #fff;
+	margin-bottom: 20px;
+	border-radius: 50px;
+}
+.text i{
+	width:30px;
+}
+input{
+	height: 40px;
+	width: 180px;
+	height:50;
+	margin-right: 15px;
+	outline: none;
+	border:none;
+}
+.button:hover{
+	opacity: .9;
+}
+.button{
+	margin: 0 auto;
+	color:#fff;
+	background-color: #1768F5;
+}
+
+
+@media only screen and (max-width: 568px) {
+  /* For mobile phones: */
+  .form {
+    width: 100%;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
