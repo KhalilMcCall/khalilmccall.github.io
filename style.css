@@ -26,8 +26,16 @@ body{
 	height:50%;
 	text-align:center;
 }
-
-
+.more{
+	margin: 0 auto;
+	display: block;
+}
+.screen{
+	background:rgba(0,0,0,0.3);
+	width:100%;
+	height: 100%;
+	background-size: cover;
+}
 .weatherPage{
 	position: fixed;
 	width:100%;
@@ -38,14 +46,16 @@ body{
 	background-repeat: none;
 	background-position: center;
 } 
-
+.saying{
+	margin:30px;
+}
 .container{
 	width:90%;
 	margin:0 auto;
-
+	margin-top:30px;
 	height:100px;
 	display: flex;
-	justify-content: space-between;
+	justify-content: center;
 	align-items: center;
 }
 .name{
@@ -73,6 +83,15 @@ body{
 	top:0%;
 	transition: .8s;
 	color:#fff;
+}
+
+.sun{
+	position: absolute;
+	border:2px #000 solid;
+	width: 100%;
+	height: 300px;
+	bottom: 0%;
+
 }
 
 .top{
