@@ -3,9 +3,12 @@
 var button = document.querySelector('.button');
 var weatherPage = document.querySelector('.weatherPage');
 var form =document.querySelector('.form');
-var city;
-var state;
+
+var city = document.querySelector('.city');
+var state = document.querySelector('.state');
 var url;
+button.disabled = true;
+
 
 
 var conditions = {
@@ -30,7 +33,29 @@ var conditions = {
 	}
 };
 
+function checkPut(){
+if(city.value.length != 0 && state.value.length != 0){
+state.parentElement.style.border ="3px solid green";
+city.parentElement.style.border ="3px solid green";
+		button.disabled = false;
+		
+}else{
+	
+	if(city.value.length == 0 ){
+			city.parentElement.style.border ="3px solid red";
+	}else{
+		city.parentElement.style.border ="3px solid green";
+	}
+	
+	if(state.value.length == 0){
+		state.parentElement.style.border ="3px solid red"
+	}else{
+		state.parentElement.style.border ="3px solid green";
+	}
 
+	button.disabled = true;
+}
+}
 
 
 
@@ -45,7 +70,8 @@ document.querySelector('.temp').textContent = "";
 document.querySelector('.weatherPage').style.background = "#24252A";
 document.querySelector('.weatherPage').style.backgroundPosition = "center";
 document.querySelector('.saying').textContent = "";
-document.querySelector(".setImg").src = "";
+document.querySelector('.img').textContent = "";
+
 
 }
 
@@ -58,8 +84,10 @@ function weatherMe(weatherData){
 
 	
 	console.log(weatherData["name"]);
-		document.querySelector('.nameText').textContent = weatherData["name"];
-
+	var namecon = '<i class="fas fa-map-pin fa-2x"></i><h1 class="nameText"></h1>';
+document.querySelector('.name').innerHTML =  namecon;
+		document.querySelector('.nameText').textContent =  '\xa0' + weatherData["name"];
+document.querySelector('.img').innerHTML = '<img class="setImg" src="">';
 	var date = new Date();
 var offSet = date.getTimezoneOffset();
 var cityMinutes = weatherData["timezone"] / 60;
@@ -93,18 +121,18 @@ document.querySelector(".saying").textContent = conditions[weatherData["weather"
 
 document.querySelector('.date').textContent = newDate;
 
-document.querySelector('.nameText').textContent = weatherData["name"];
+
 document.querySelector('.temp').textContent = weatherData["main"]["temp"] +'\xB0';
-document.querySelector('.weatherPage').style.background = background;
+document.querySelector('.weatherPage').style.background =  "none";//background;
 document.querySelector('.weatherPage').style.backgroundPosition = "center";
 }
 
 
 button.addEventListener('click',function(){
 
-city = document.querySelector('.city');
- state = document.querySelector('.state');
- url = 'https://api.openweathermap.org/data/2.5/weather?q='+city.value+','+state.value+'&units=imperial&appid=1997240d660c8ec4c84f3c60d31c6079';
+var cityVal = city.value.replace(/\s+/g, '');
+var stateVal = state.value.replace(/\s+/g, '');
+ url = 'https://api.openweathermap.org/data/2.5/weather?q='+cityVal+','+stateVal+',us&units=imperial&appid=1997240d660c8ec4c84f3c60d31c6079';
 
 var nameText = document.querySelector('.nameText');
 tog();
@@ -116,7 +144,8 @@ fetch(url)
 		return res.json()
 	}else{
 		console.log("NO SUCCESS");
-		document.querySelector(".nameText").textContent = "Sorry we couldn't find that city try again.";
+		document.querySelector('.weatherPage').style.background =  "none";
+		document.querySelector(".name").textContent = "Sorry we couldn't find that city try again.";
 		reset();
 	}
 })
