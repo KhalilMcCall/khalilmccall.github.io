@@ -4,239 +4,236 @@
 	padding:0;
 	box-sizing:border-box;
 	font-family: 'Montserrat';
-	
-
 }
-
 
 body{
-	background-size: cover;
-	background-position: center;
-
-	background:url('background.jpg');
-	  background: linear-gradient(to top, #67b26f, #4ca2cd);
-	height: 100vh;
 	width:100%;
+	height:auto;
+	position: relative;
+
 }
-.form{
-	position: fixed;
-	top:50%;
-	left:50%;
-	transform: translate(-50%,-50%);
-	background:#24252A;
-	width:50%;
-	height:50%;
-	max-width: 564px;
+html {
+  scroll-behavior: smooth;
+}
+#home{
+	width:100%;
+	height: 100vh;
+	position: relative;
+	background: #fc4a1a;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #f7b733, #fc4a1a);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #f7b733, #fc4a1a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	background-position: center;
+	background-size: cover;
 	
-	text-align:center;
-		transition: .8s;
-}
-.more{
-	margin: 0 auto;
-	display: block;
-	   height: 30px;
+ -webkit-clip-path: polygon(0 0, 100% 0, 100% 96%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
 }
 .screen{
-	background:rgba(0,0,0,0.3);
 	width:100%;
-	height: 100%;
-	background-size: cover;
-}
-.weatherPage{
-	position: fixed;
-	width:100%;
-	max-width: 723px;
-	height:100vh;
-	margin: 0 auto;
-	top:100%;
-	background:#24252A;
-	transition: 0.8s;
-	background-repeat: none;
-	background-position: center;
-	max-width: 722px;
-	    left: 50%;
-    right: 50%;
-    transform: translate(-50%, -0%);
+	height: 100vh;
+	position: relative;
+	background: rgba(148, 167, 255, .1); 
 }
 
-
-} 
-.saying{
-	margin:30px;
-	text-align: center;
-}
 .container{
-	width:90%;
-	margin:0 auto;
-	
-	height:100px;
+	color:#fff;
+	background:rgba(0,0,0,0.7);
 	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-.name{
-	display: inline-flex;
-}
-
-
-.midCont{
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-.img{
-	width:35%;
-}
-
-.setImg{
 	width:100%;
+	margin: 0 auto;
+	height: 60px;
+	justify-content: space-between; 
+	padding:0 30px 0 30px;
+	align-items: center;
+	position: fixed;
+	z-index: 30;
+	top:0px;
+	
+
 }
-.temp{
-	text-align: center;
-	width: 50%;
-	font-size:60px;
+#portfolio{
+	height:100vh;
+	width:100%;
+	position: relative;
+	top:100%;
+
+
 }
-.bottom{
-	top:0%;
-	transition: .8s;
-	color:#fff;
+#portfolio h1{
+display: inline-block;
+position: relative;
+top:10%;
 }
 
-.sun{
+.boxtwo{
+	width:70%;
+	height:80vh;
 	position: absolute;
-	border:2px #000 solid;
-	width: 100%;
-	height: 300px;
-	bottom: 0%;
+	top:55%;
+	left:50%;
+	transform: translate(-50%, -50%);
+display: grid;
+grid-template-columns: 400px 400px ;
 
+grid-column-gap: 50px;
+grid-row-gap: 50px;
+justify-content:center;
+align-items: center;
+	
 }
 
-.top{
-	top:-50%;
-	transition: .8s;
+
+
+.pic{
+	position: relative;
+	
 }
-.form h1{
-	margin-top: 20px;
-	margin-bottom: 30px;
+.filter{
+	position: absolute;
+	width:100%;
+	height: 20%;
+	background-color: rgba(0,0,0,0.5);
+	bottom: 0;
 	color:#fff;
+	display: none;
 }
-.text{
+.pic:hover > .filter{
+	display: block;
+}
+
+.filter a{
+	font-weight: 800;
+	color: #fff;
+}
+.pic img{
+	width:100%;
+	height: 246px;
+	transition: .5s;
+}
+.nav{
+	width:400px;
+}
+.nav a{
+	display: block;
+	color: #fff;
+	font-family:'Montserrat';
+	text-decoration: none;
+	border: 3px solid transparent;
+transition: .5s;
+height: 60px;
+line-height: 57px;
+
+}
+.nav a:hover{
+	color: red;
+		border-bottom: 3px solid #fff;
+}
+.nav li{
+	list-style-type: none;
+		line-height: 60px;
+
+	transition: .5s;
+
+}
+
+.nav ul{
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	margin:0 auto;
-	width:300px;
-	text-align: right;
-	background-color: #fff;
-	margin-bottom: 20px;
-	border-radius: 50px;
-	border: 3px solid #24252A;
-	transition: .1s;
-}
-.text i{
-	width:30px;
-}
-input{
-	height: 40px;
-	width: 180px;
-	height:50;
-	margin-right: 15px;
-	outline: none;
-	border:none;
-}
-
-.button:hover{
-	opacity: .7;
-}
-.button, .more{
-	  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-}
-.button{
-	margin: 0 auto;
-	margin-top: 15px;
-	color:#fff;
-	background-color: #1768F5;
-	font-size: 20px;
-	padding:10px;
-	width: 180px;
-	
-	 box-sizing: content-box;
-    -webkit-box-sizing: content-box;
+	 overflow: hidden;
 
 }
- 
-.more{
-color:#fff;
-	background-color: #67B26F;
-	
-	padding:10px;
-	font-size: 15px;
-	padding:10px;
-	width: 180px;
-	 box-sizing: content-box;
-    -webkit-box-sizing: content-box;
-    margin-top: 20px;
+h4{
+	font-weight: 800;
 }
-.saying{
+
+
+.box{
+	position: absolute;
+	top:50%;
+	left:50%;
+	transform: translate(-50%,-50%);
 	text-align: center;
+	color: #fff;
 }
-.city, .state{
- 	width:240px;
- }
- .form h1 span{
-	font-size: 18px;
-	font-style: italic;
-	font-family: sans-serif;
-	font-weight: 400;
-}
-
-@media only screen and (min-width: 749px) {
-  /* For mobile phones: */
-
-
- .form{
- 	max-height: 370px;
- }
- 
-
-}
-@media only screen and (max-width: 748px) {
-  /* For mobile phones: */
-  .form {
-    width: 100%;
-  }
- 
- .city, .state{
- 	height:45px;
- 	font-size: 20px;
- 	
- }
-}
- @media only screen and (max-width: 400px){
- 	.form{
- 		height: 60%;
- 	}
-.form h1{
-	margin-top: 0px;
+.box h1{
+	text-align: center;
+	color: #fff;
+	text-transform: uppercase;
+	font-weight: 500;
+	font-size: 50px;
 }
 
-.button{
-	margin-top: 5px;
- }
+.box h2{
+	font-weight: lighter;
+}
+.box button{
+	margin-top: 20px;
+	height: 50px;
+	width:200px;
+	background:none;
+	border:2px solid #fff;
+	font-size: 20px;
+	color: #fff;
+	color:#000;
+	outline: none;
+	position: relative;
+	overflow: hidden;
+	transition: .5s;
+}
+.box button:hover{
+	background-color: #000;
+	color: #fff;
+}
+
+.box button::before{
+	content:"";
+	position: absolute;
+	background-color: #eee;
+	padding:50%;
+	border-radius: 50%;
+	left:50%;
+	top:50%;
+	transform: translate(-50%,-50%) scale(1);
+	opacity: 0;
+	transition:transform 1s, opacity 1s;
 }
 
 
+.box button:active::before{
+	transition: 0s;
+	opacity:1;
+	transform:translate(-50%, -50%) scale(0);
+}
 
 
+@media only screen and (max-width: 520px) {
+	.logo{
+		display: none;
+	}
+	.container{
+		justify-content: center;
+	}
+	.box{
+		width:70%;
+	}
+	.nav a{
+		font-size: 16px;
+	}
+	#home{
+		height: 70vh;
+	}
+}
+
+@media only screen and (max-width: 850px) {
+
+.box h1{
+	font-size: 30px;
+}
+.boxtwo{
+	grid-template-columns: 300px ;
+}
 
 
-
-
-
-
-
-
-
+}
 
