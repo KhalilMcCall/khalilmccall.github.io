@@ -130,8 +130,16 @@ document.querySelector('.weatherPage').style.backgroundPosition = "center";
 
 button.addEventListener('click',function(){
 
+
 var cityVal = city.value;
+cityVal = cityVal.replace(/ +/g," ");
+cityVal = cityVal.trim();
 var stateVal = state.value;
+stateVal = stateVal.replace(/ +/g," ");
+stateVal = stateVal.trim();
+
+console.log(cityVal);
+console.log(stateVal);
  url = 'https://api.openweathermap.org/data/2.5/weather?q='+cityVal+','+stateVal+',us&units=imperial&appid=1997240d660c8ec4c84f3c60d31c6079';
 
 var nameText = document.querySelector('.nameText');
